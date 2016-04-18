@@ -1,0 +1,46 @@
+{
+  "name": "noops",
+  "version": "0.1.0",
+  "description": "deploy an API server as multiple AWS lambda functions",
+  "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/cjihrig/noops",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cjihrig/noops"
+  },
+  "bugs": {
+    "url": "https://github.com/cjihrig/noops/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "noops": "./bin/noops.js"
+  },
+  "scripts": {
+    "lint": "belly-button -f",
+    "test": "npm run lint"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "2.3.3",
+    "boom": "3.1.2",
+    "browserify": "13.0.0",
+    "fs-extra": "0.27.0",
+    "insync": "2.1.1",
+    "lodash.merge": "4.3.5",
+    "node-uuid": "1.4.7",
+    "node-zip": "1.1.1"
+  },
+  "devDependencies": {
+    "belly-button": "2.0.1"
+  },
+  "keywords": [
+    "lambda",
+    "lambda function",
+    "AWS",
+    "aws",
+    "serverless"
+  ]
+}
