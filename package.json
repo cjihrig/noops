@@ -1,6 +1,6 @@
 {
   "name": "noops",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "deploy an API server as multiple AWS lambda functions",
   "author": "Continuation Labs <contact@continuation.io> (http://continuation.io/)",
   "main": "lib/index.js",
