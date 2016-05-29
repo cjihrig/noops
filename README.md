@@ -13,7 +13,57 @@
 More documentation will follow, as the project matures. For now, take the example API for a test run. Pull down this repo and run `npm install`. Then, in `examples/demo.js`, add your access key, secret key, region, and an IAM role that is able to execute lambda functions. Finally, run:
 
 ```
-node ./bin/noops.js examples/demo.js
+node ./bin/noops.js deploy examples/demo.js
 ```
 
 This may take some time to complete (it takes time to make all of the API calls to configure the HTTP status code handling in AWS). Once execution completes, you should have two lambda functions that are connected to an API gateway. You can access these resources via your AWS account.
+
+## Command Line Interface
+
+This section describes the commands supported by `noops`. The examples in this section assume that the `noops` binary is in your `PATH`.
+
+### `deploy`
+
+Deploys a system configuration to AWS. API endpoints are mapped to an AWS API Gateway. The handler for each endpoint is mapped to an AWS Lambda function.
+
+Example command:
+
+```
+$ noops deploy system.js
+```
+
+### `remove`
+
+Removes the resources associated with a system from AWS.
+
+Example command:
+
+```
+$ noops remove system.js
+```
+
+## Testing
+
+`noops` systems can be tested offline by generating a hapi mock server.
+
+Example code:
+
+```javascript
+const NoOps = require('noops');
+const system = new NoOps.System(require('./system'));
+
+system.mock({
+  connection: { port: 6000 }
+}, (err, server) => {
+  // For the sake of testing, it is recommended that
+  // you use server.inject() instead of starting the server.
+  server.start((err) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+
+    console.log(`Server started at ${server.info.uri}`);
+  });
+});
+```
