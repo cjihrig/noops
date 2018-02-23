@@ -3,8 +3,8 @@
 [![Current Version](https://img.shields.io/npm/v/noops.svg)](https://www.npmjs.org/package/noops)
 [![Build Status via Travis CI](https://travis-ci.org/continuationlabs/noops.svg?branch=master)](https://travis-ci.org/continuationlabs/noops)
 ![Dependencies](http://img.shields.io/david/continuationlabs/noops.svg)
+[![belly-button-style](https://img.shields.io/badge/eslint-bellybutton-4B32C3.svg)](https://github.com/continuationlabs/belly-button)
 
-[![belly-button-style](https://cdn.rawgit.com/continuationlabs/belly-button/master/badge.svg)](https://github.com/continuationlabs/belly-button)
 
 **This is still a very early work in progress**
 
